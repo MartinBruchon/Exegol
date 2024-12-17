@@ -224,7 +224,13 @@ class ContainerCreation(ContainerSelector, ImageSelector):
                               default=[],
                               action="append",
                               help="Add host [default not bold]device(s)[/default not bold] at the container creation (example: -d /dev/ttyACM0 -d /dev/bus/usb/)")
-
+        
+        self.profile = Option("--profile",
+                              dest="profile",
+                              default=None,
+                              action="store",
+                              help="Use a specific profile of resources")
+        
         self.comment = Option("--comment",
                               dest="comment",
                               action="store",
@@ -242,6 +248,7 @@ class ContainerCreation(ContainerSelector, ImageSelector):
                                   {"arg": self.devices, "required": False},
                                   {"arg": self.X11, "required": False},
                                   {"arg": self.my_resources, "required": False},
+                                  {"arg": self.profile, "required": False},
                                   {"arg": self.exegol_resources, "required": False},
                                   {"arg": self.host_network, "required": False},
                                   {"arg": self.share_timezone, "required": False},

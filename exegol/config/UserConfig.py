@@ -19,6 +19,7 @@ class UserConfig(DataFileUtils, metaclass=MetaSingleton):
         # Defaults User config
         self.private_volume_path: Path = ConstantConfig.exegol_config_path / "workspaces"
         self.my_resources_path: Path = ConstantConfig.exegol_config_path / "my-resources"
+        self.profiles_path: Path = ConstantConfig.exegol_config_path / "profiles"
         self.exegol_resources_path: Path = self.__default_resource_location('exegol-resources')
         self.auto_check_updates: bool = True
         self.auto_remove_images: bool = True

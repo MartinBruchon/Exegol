@@ -459,6 +459,8 @@ class ExegolManager:
                     config.addRawPort(port)
             if ParametersManager().my_resources:
                 config.enableMyResources()
+            if ParametersManager().profile:
+                config.setProfile(ParametersManager().profile)
             if ParametersManager().exegol_resources:
                 config.enableExegolResources()
             if ParametersManager().log:
